@@ -1,0 +1,33 @@
+
+# List of stages for jobs
+stages:
+  - build
+  - test
+  - deploy
+
+# This job run in the build stage, wich runs first
+buils-job:
+  stage: build
+  script:
+    - echo "Compiling the code ..."
+    - echo "Compile complete."
+
+unit-test-job:
+  stage: test
+  script:
+    - echo "Running unit tests... This will take about 60 seconds."
+    - sleep 60
+    - echo "Code coverage is 90%"
+
+lint-test-job:
+  stage: test
+  script:
+    - echo "Linting code... This will take about 10 seconds."
+    - sleep 10
+    - echo "No lint issues found."
+
+deploy-job:
+  stage: deploy
+  scrip:
+    - echo "Deploying application..."
+    - echo "Application successfully deployed."
