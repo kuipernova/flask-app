@@ -2,9 +2,7 @@
 
 pipeline {
   // Assign to docker slave(s) label, could also be 'any'
-  agent {
-    label 'docker'
-  }
+  agent none
 
   environment {
     DOCKER_IMAGE = "kuipernova/flask-docker"
@@ -15,7 +13,6 @@ pipeline {
       agent {
           docker {
             // Set both label and image
-            label 'docker'
             image 'python:3.8-slim-buster'
             args '-u 0:0 -v /tmp:/root/.cache'
           }
