@@ -28,6 +28,6 @@ lint-test-job:
 
 deploy-job:
   stage: deploy
-  scrip:
+  script:
     - echo "Deploying application..."
     - echo "Application successfully deployed."
